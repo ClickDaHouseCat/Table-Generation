@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <textarea id="inputText" placeholder="Введите строки, разделяя их новыми строками"></textarea>
+    <div id="checkboxes">
+        <input type="checkbox" name="_" id="_" checked style="display: none;">
+        <input type="checkbox" name="upd" id="upd">UPD
+        <input type="checkbox" name="notepad" id="notepad">Notepad
+        <input type="checkbox" name="acrobat" id="acrobat">Acrobat
+        <input type="checkbox" name="vmware" id="vmware">VMWare
+        <input type="checkbox" name="vsc" id="vsc">VSC
+        <input type="checkbox" name="sqlman" id="sqlman">SQLMan
+    </div>
+    <button onclick="generateTable()">Создать таблицу</button>
+    <div id="tableContainer"></div>
+    <div id="counterContainer"></div>
+<script src="script.js">
+</script>
+</body>
+</html>
