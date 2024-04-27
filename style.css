@@ -1,3 +1,8 @@
 tr, td{
   border: solid 1px;
 }
+
+#inputText{
+  width: 250px;
+  height: 100px;
+}

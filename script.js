@@ -48,7 +48,7 @@ function generateTable() {
     tableContainer.innerHTML = tableHTML;
 
     // Обновляем отображение счетчика строк
-    counterContainer.innerHTML = "Количество зеленых строк: " + greenRowCount + " из " + totalRowCount;
+    counterContainer.innerHTML = "Готово: " + greenRowCount + " из " + totalRowCount;
 
     // Добавляем обработчик события click для каждой ячейки таблицы
     var cells = document.querySelectorAll("#tableContainer td");
@@ -83,7 +83,7 @@ function generateTable() {
                     break;
             }
             // Обновляем отображение счетчика строк
-            counterContainer.innerHTML = "Количество зеленых строк: " + greenRowCount + " из " + totalRowCount;
+            counterContainer.innerHTML = "Готово: " + greenRowCount + " из " + totalRowCount;
         });
     });
 }
