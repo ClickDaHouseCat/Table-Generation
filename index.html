@@ -4,22 +4,59 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Document</title>
+  <title>Генерация таблицы плановых работ</title>
 </head>
 <body>
+  <div class="wrapper">
   <textarea id="inputText" placeholder="Введите строки. Каждый новый сервер на новой строке"></textarea>
     <div id="checkboxes">
-        <input type="checkbox" name="_" id="_" checked style="display: none;">
-        <input type="checkbox" name="upd" id="upd">UPD
-        <input type="checkbox" name="notepad" id="notepad">Notepad
-        <input type="checkbox" name="acrobat" id="acrobat">Acrobat
-        <input type="checkbox" name="vmware" id="vmware">VMWare
-        <input type="checkbox" name="vsc" id="vsc">VSC
-        <input type="checkbox" name="sqlman" id="sqlman">SQLMan
+      <div id="checkboxes1">
+        <label><input type="checkbox" name="_" id="_" checked style="display: none;"></label>
+        <label><input type="checkbox" name="upd" id="upd" checked>UPD</label>
+        <label><input type="checkbox" name="notepad" id="notepad">Notepad</label>
+        <label><input type="checkbox" name="acrobat" id="acrobat">Acrobat</label>
+        <label><input type="checkbox" name="edge" id="acrobat">Edge</label>
+      </div>
+      <div id="checkboxes2">
+        <label><input type="checkbox" name="vmware" id="vmware">VMWare</label>
+        <label><input type="checkbox" name="vsc" id="vsc">VSC</label>
+        <label><input type="checkbox" name="sqlman" id="sqlman">SQLMan</label>
+      </div>
     </div>
     <button onclick="generateTable()">Создать таблицу</button>
     <div id="tableContainer"></div>
     <div id="counterContainer"></div>
+    <button id="resetButton">Сброс</button>
+    <button id="copyButton">Копировать таблицу</button>
+    <details><summary> Список для примера. Скопируй и вставь в первое поле</summary>
+    <pre>
+      SPB99-EMCAPP01
+      SPB99-EMCAPP02
+      SPB99-EMCAPP03
+      SPB99-EMCDBE02
+      SPB99-EMCDBE03
+      SPB99-EMCDBE01
+      SPB99-EMCDBO01
+      SPB99-EMCINT01
+      SPB99-EMCIT01
+      SPB99-EMCIT02
+      SPB99-EMCIT03
+      SPB99-EMCPL01
+      SPB99-EMCPL02
+      SPB99-EMCPL03
+      SPB99-EMCPL04
+      SPB99-EMCAPI01
+      SPB99-EMCAPI02
+      SPB99-EMCTC01
+      SPB99-EMCTC02
+      SPB99-EMCTC03
+      SPB99-EMCWEB01
+      SPB99-EMCWEB02
+      SPB99-EMCAPP01T
+    </pre>  </details>
+
+  </div>
+  
 <script src="script.js">
 </script>
 </body>

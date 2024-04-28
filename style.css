@@ -1,8 +1,36 @@
 tr, td{
-  border: solid 1px;
+  cursor: pointer;
+  user-select: none;
+  border: solid 1px black;
+}
+
+table{
+  border: none;
 }
 
 #inputText{
   width: 250px;
   height: 100px;
+}
+
+.wrapper{
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#checkboxes{
+  width: 165px;
+  display: flex;
+  gap: 10px;
+}
+
+#checkboxes1, #checkboxes2{
+  display: flex;
+  flex-direction: column;
 }

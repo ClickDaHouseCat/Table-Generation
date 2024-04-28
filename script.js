@@ -48,7 +48,7 @@ function generateTable() {
     tableContainer.innerHTML = tableHTML;
 
     // Обновляем отображение счетчика строк
-    counterContainer.innerHTML = "Готово: " + greenRowCount + " из " + totalRowCount;
+    counterContainer.innerHTML = "Количество зеленых строк: " + greenRowCount + " из " + totalRowCount;
 
     // Добавляем обработчик события click для каждой ячейки таблицы
     var cells = document.querySelectorAll("#tableContainer td");
@@ -83,7 +83,47 @@ function generateTable() {
                     break;
             }
             // Обновляем отображение счетчика строк
-            counterContainer.innerHTML = "Готово: " + greenRowCount + " из " + totalRowCount;
+            counterContainer.innerHTML = "Количество зеленых строк: " + greenRowCount + " из " + totalRowCount;
         });
     });
 }
+
+
+// Функция для сброса состояния страницы и локального хранилища
+function resetPageState() {
+    localStorage.clear(); // Очищаем локальное хранилище
+    document.getElementById("inputText").value = ""; // Очищаем поле ввода
+    var checkboxes = document.querySelectorAll("#checkboxes input[type=checkbox]"); // Снимаем все галочки с чекбоксов
+    checkboxes.forEach(function(checkbox) {
+        checkbox.checked = false;
+    });
+    document.getElementById("tableContainer").innerHTML = ""; // Очищаем содержимое таблицы
+    document.getElementById("counterContainer").innerHTML = ""; // Очищаем информацию о количестве строк
+    totalRowCount = 0; // Сбрасываем счетчик общего количества строк
+    greenRowCount = 0; // Сбрасываем счетчик количества зеленых строк
+}
+
+// Добавляем обработчик события click для кнопки сброса
+document.getElementById("resetButton").addEventListener("click", function() {
+    resetPageState();
+});
+
+
+// Функция для копирования таблицы в буфер обмена
+function copyTableToClipboard() {
+    var tableContainer = document.getElementById("tableContainer");
+    var range = document.createRange();
+    range.selectNode(tableContainer);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+}
+
+// Добавляем кнопку для копирования таблицы в HTML
+var copyButton = document.getElementById("copyButton");
+copyButton.textContent = "Копировать таблицу";
+copyButton.addEventListener("click", function() {
+    copyTableToClipboard();
+});
+
